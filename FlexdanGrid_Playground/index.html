@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flex & Grid Playground2</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container position-relative d-flex align-items-center">
+      <!-- logo kiri -->
+      <img src="myLogo.jpeg" alt="Logo" width="44" height="44" class="rounded-circle object-fit">
+
+      <!-- title center -->
+      <span class="navbar-title position-absolute start-50 translate-middle-x text-white fw-bold">
+        Flex & Grid Playground
+      </span>
+    </div>
+  </nav>
+
+  <!-- DESKRIPSI -->
+  <section class="deskripsi-section">
+    <div class="container">
+      <div class="row">
+
+        <!-- FLEXBOX -->
+        <div class="col-lg-6">
+          <h4>Flexbox</h4>
+          <p>Flexbox digunakan untuk layout satu dimensi (baris atau kolom).
+            Flexbox selalu punya 2 sumbu (axis): </p>
+          <ol>
+            <li>Main Axis
+              Arah flex-direction, atas dan bawah, justify-content mengatur main axis.
+            </li>
+            <li>Cross Axis
+              Arah yang tegak lurus dengan main axis, kiri dan kanan, align-items mengatur cross axis
+            </li>
+          </ol>
+
+        </div>
+
+        <!-- GRID -->
+        <div class="col-lg-6">
+          <h4>Grid</h4>
+          <p>Grid digunakan untuk layout dua dimensi (baris dan kolom).</p>
+          <ol>
+            <li>Grid = GARIS</li>
+            <li>Row/Column adalah <span class="fw-bold">jarak</span> antar garis</li>
+            <li>start & end bukan arah mereka hanya penanda batas</li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <div class="app-wrapper">
+    <div class="container py-4">
+
+      <div class="row">
+        <!-- CONTROL PANEL -->
+        <div class="col-lg-4">
+          <!-- Mode -->
+          <div class="card mb-3">
+            <div class="card-header fw-bold">Mode Layout</div>
+            <div class="card-body">
+              <select id="layoutMode" class="form-select">
+                <option value="flex">Flexbox</option>
+                <option value="grid">Grid</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- FLEX -->
+          <div id="flexControls" class="card mb-3">
+            <div class="card-header fw-bold">Flexbox Control</div>
+            <div class="card-body">
+              <label class="form-label">flex-direction</label>
+              <select id="flexDirection" class="form-select mb-2">
+                <option value="row">row</option>
+                <option value="column">column</option>
+              </select>
+
+              <label class="form-label">justify-content</label>
+              <select id="justifyContent" class="form-select mb-2">
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+              </select>
+
+              <label class="form-label">align-items</label>
+              <select id="alignItems" class="form-select mb-2">
+                <option value="stretch">stretch</option>
+                <option value="center">center</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+              </select>
+
+              <label class="form-label">Gap (px)</label>
+              <input id="FlexGap" type="number" class="form-control" value="10">
+            </div>
+          </div>
+
+          <!-- GRID -->
+          <div id="gridControls" class="card mb-3 d-none">
+            <div class="card-header fw-bold">Grid Control</div>
+            <div class="card-body">
+              <label class="form-label">Columns</label>
+              <input id="gridCols" type="number" class="form-control mb-2" value="3">
+
+              <label class="form-label">Rows</label>
+              <input id="gridRows" type="number" class="form-control mb-2" value="2">
+
+              <label class="form-label">Gap (px)</label>
+              <input id="gridGap" type="number" class="form-control mb-2" value="10">
+
+              <label class="form-label">justify-items</label>
+              <select id="justifyItems" class="form-select mb-2">
+                <option value="stretch">stretch</option>
+                <option value="start">start</option>
+                <option value="center">center</option>
+                <option value="end">end</option>
+              </select>
+
+              <label class="form-label">align-items</label>
+              <select id="alignItemsGrid" class="form-select">
+                <option value="stretch">stretch</option>
+                <option value="start">start</option>
+                <option value="center">center</option>
+                <option value="end">end</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREVIEW -->
+        <div class="col-lg-8">
+          <div class="card mb-3">
+            <div class="card-header fw-bold">Live Preview</div>
+            <div class="card-body">
+              <div id="preview" class="preview-box">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header fw-bold">Generated CSS</div>
+            <div class="card-body">
+              <pre id="cssOutput"></pre>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <small>
+        © 2026 Flex & Grid Playground • Built for learning CSS Layout
+        by wisnu
+      </small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

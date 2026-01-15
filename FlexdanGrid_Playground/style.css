@@ -1,0 +1,177 @@
+.navbar-title {
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* DESKRIPSI SECTION */
+.deskripsi-section {
+  background: linear-gradient(180deg, #050505, #0e0e0e);
+  color: #ffffff;
+  padding: 60px 0;
+  font-family: "Fira Code", monospace;
+}
+
+.deskripsi-section h2 {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.deskripsi-section p {
+  color: #cfcfcf;
+}
+
+.deskripsi-section ul {
+  padding-left: 18px;
+}
+
+.deskripsi-section li {
+  margin-bottom: 8px;
+  color: #e6e6e6;
+}
+
+/* main app */
+.app-wrapper {
+  position: relative;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+
+  /* biar kelihatan rapi */
+  border-radius: 16px;
+  padding: 20px;
+
+  /* jarak dari navbar & footer */
+  margin: 24px auto;
+}
+
+/* PREVIEW */
+.preview-box {
+  min-height: 260px;
+  border: 2px dashed #adb5bd;
+  padding: 12px;
+  background: #fff;
+}
+
+/* GRID OVERLAY MODE */
+.preview-box.grid-mode {
+  background-color: #0b0f19;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0.6) 2px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 2px, transparent 1px);
+}
+
+/* GLOBAL CARD STYLE */
+.card {
+  background: rgba(20, 20, 28, 0.85);
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.35s ease;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #1e293b, #020617);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(124, 58, 237, 0.4);
+}
+
+/* highlighted controls */
+#flexControls {
+  border-left: 4px solid #3b82f6;
+}
+#gridControls {
+  border-left: 4px solid #8b5cf6;
+}
+/* FORM CONTROLS */
+.form-select,
+.form-control {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+  background-color: #020617;
+  color: #fff;
+}
+
+/* Live preview card lebih menonjol */
+.col-lg-8 .card:first-child {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(59, 130, 246, 0.4);
+}
+
+
+/* ITEM */
+.item {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  padding: 14px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+#cssOutput {
+  font-family: "Fira Code", monospace;
+  background: #020617;
+  color: #22c55e;
+  border-radius: 12px;
+  padding: 16px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+
+/* FOOTER */
+.footer {
+  background: #0e0e0e;
+  color: #bdbdbd;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeUp 0.6s ease forwards;
+}
